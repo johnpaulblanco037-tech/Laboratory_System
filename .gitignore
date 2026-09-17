@@ -1,0 +1,5 @@
+hardware_inventory.db
+.venv
+app_logging
+__pycache__
+inventory_report.csv
