@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Verify Account | Laboratory System
+{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-card">
+
+        <div class="auth-header">
+            <div class="logo-box">
+                LAB
+            </div>
+            <h1>Verify Account</h1>
+            <p>Enter your 6-digit verification code</p>
+        </div>
+
+        <form method="POST" class="auth-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                    id="username"
+                    type="text"
+                    name="username"
+                    value="{{ username }}"
+                    readonly
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="verification_code">Verification Code</label>
+                <input
+                    id="verification_code"
+                    type="text"
+                    name="verification_code"
+                    class="otp-input"
+                    maxlength="6"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    placeholder="000000"
+                    autocomplete="one-time-code"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="primary-button full-button">
+                Verify Account
+            </button>
+        </form>
+
+        <div class="auth-links">
+            <a href="{{ url_for('login') }}">Back to Login</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
